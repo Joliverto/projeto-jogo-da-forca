@@ -23,9 +23,6 @@ palavras = [
     "dinossauro"
 ]
 
-# apagar dps
-a = "nada"
-b = "nada"
 # Inicio do jogo
 print("Bem-vindo(a) ao jogo da forca!")
 print("Adivinhe a palavra abaixo:")
@@ -33,35 +30,43 @@ print("Adivinhe a palavra abaixo:")
 # Armazena a palavra escolhida aleatoriamente
 palavra_escolhida = rd.choice(palavras)
 
-# Função para criar as linhas de dica para a palavra
-def crialinha(palavra):
-    lin = ""
-    for i in palavra:
-        lin += "_"
-    return lin
-
 # Armazena a palavra de forma mascarada
-linhas = crialinha(palavra_escolhida)
-print(linhas)
-
+# palavra_oculta = crialinha(palavra_escolhida)
+palavra_oculta_lista = ["_" for i in palavra_escolhida]
+palavra_oculta = "".join(palavra_oculta_lista)
+print(palavra_oculta)
 
 ##########################################
 
-while "_" in 
+# While onde irá continuar perguntando até que...
+letras_erradas = []
+chances = 6
+while chances != 0:
 
-# Pede a letra para arriscar
-letra = str(input("Digite uma letra: "))
+    # Mostra os pontos do usuário
+    print("Chances restantes: {}".format(chances))
+    print("Letras erradas: {}".format(letras_erradas))
 
-def verificaletra(letra):
-    lugar = ""
+    # Pede a letra para arriscar e verifica se ela é válida
+    letra = str(input("Digite uma letra: ")).lower()
+    while (len(letra) == 0) or (len(letra)) > 1 or (letra.isnumeric()):
+        print("Você deve digitar apenas uma letra!")
+        letra = str(input("Digite uma letra: "))
 
-    while "_" or "" in lugar:
-        for i in palavra_escolhida:
-            if i == letra:
-                lugar += i
-            else:
-                lugar += "_"
-    return lugar
+    # Verifica se existe a letra na palavra
+    if letra not in palavra_escolhida:
+            chances -= 1
+            letras_erradas.append(letra)
+    else:
+        # Verifica quantas letras tem na palavra e converte
+        for indice, caractere in enumerate(palavra_escolhida):
+            if caractere == letra:
+                palavra_oculta_lista[indice] = letra
+
+            
+
+            
+    print("".join(palavra_oculta_lista))
 
 
 
