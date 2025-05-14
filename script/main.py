@@ -1,4 +1,5 @@
 import random as rd
+from os import system, name
 
 palavras = [
     "abacaxi",
@@ -45,6 +46,7 @@ print("")
 letras_erradas = []
 chances = 6
 while chances > 0:
+
     # Mostra a interface do usuário: Chances e Letras erradas.
     print("Chances restantes: {}".format(chances))
     print("Letras erradas: {}".format(", ".join(letras_erradas)))
@@ -78,6 +80,9 @@ while chances > 0:
         print("".join(palavra_oculta_lista))
         print("")
     print("========================================")
+
+    #if name == 'nt':
+        #_ = system('cls')
 
 # Mensagem de derrota caso você perca todas as chances
 if chances <= 0:
