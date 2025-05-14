@@ -1,3 +1,5 @@
+# Projeto 1 - Desenvolvimento de Game em Linguagem Python - Versão 1
+
 import random as rd
 from os import system, name
 
@@ -40,8 +42,6 @@ palavra_oculta = "".join(palavra_oculta_lista)
 print(palavra_oculta)
 print("")
 
-##########################################
-
 # While onde irá continuar perguntando até que...
 letras_erradas = []
 chances = 6
@@ -79,10 +79,6 @@ while chances > 0:
     else:
         print("".join(palavra_oculta_lista))
         print("")
-    print("========================================")
-
-    #if name == 'nt':
-        #_ = system('cls')
 
 # Mensagem de derrota caso você perca todas as chances
 if chances <= 0:
