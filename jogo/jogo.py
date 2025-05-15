@@ -83,7 +83,3 @@ while chances > 0:
 # Mensagem de derrota caso você perca todas as chances
 if chances <= 0:
      print("Você perdeu, a palavra era: {}".format(palavra_escolhida))
-    
-
-
-

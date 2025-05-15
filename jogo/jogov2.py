@@ -22,31 +22,11 @@ def game():
     print("Adivinha a palavra abaixo:\n")
 
     # Lista de palavras para o jogo
-    palavras = [
-        "abacaxi",
-        "girassol",
-        "computador",
-        "violão",
-        "astronauta",
-        "cachorro",
-        "planeta",
-        "montanha",
-        "escola",
-        "bicicleta",
-        "janela",
-        "foguete",
-        "elefante",
-        "livro",
-        "carnaval",
-        "oceano",
-        "teclado",
-        "internet",
-        "telefone",
-        "dinossauro"
-    ]
+    with open("arquivos/palavras_forca.txt", "r", encoding="utf-8") as arquivo:
+        palavra_escolhida = [x.strip() for x in arquivo]
 
     # Escolhe randomicamente uma palavra
-    palavra = rd.choice(palavras)
+    palavra = rd.choice(palavra_escolhida)
 
     # List comprehension
     letras_descobertas = ['_' for letra in palavra]
@@ -91,5 +71,3 @@ def game():
 # Bloco main
 if __name__ == "__main__":
     game()
-
-
